@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'; // Import PropTypes
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import { CircleIcon } from '@mui/icons-material/Circle';
 
 function CharacterCard({ character }) {
   const isAlive = character.status === 'Alive';
@@ -9,24 +8,18 @@ function CharacterCard({ character }) {
     <Card >
       <CardMedia
         sx={{ height: 250 }} image={character.image} title={character.name} />
-
       <CardContent>
         <Typography variant="body2" align='left'>
           {character.name}
           <br />
-          {character.status}
+          <span style={{ color: statusTextColor }}>{character.status}</span>
           <br />
           Species: {character.species}
           <br />
-
-
           Origin: {character.origin.name}
-
           <br />
-
           Location: {character.location.name}
         </Typography>
-
       </CardContent>
     </Card>
   );
